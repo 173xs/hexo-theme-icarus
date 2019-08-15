@@ -9,3 +9,24 @@
 <% } %>
 
 <%- _js('js/main', true) %>
+<script>
+    $(function(){
+        var showing = false;
+        var mouseArea =  $("#knowledge-star");
+        var qrcode = $("#knowledge-qrcode");
+
+        mouseArea.mouseenter(function(){
+            if(showing) return;   
+            showing = true;
+            qrcode.finish();
+            qrcode.show(1000);       
+        });
+
+        mouseArea.mouseleave(function(){
+            if(!showing) return;
+            showing = false;
+            qrcode.finish();
+            qrcode.hide(1000);
+        });
+    });
+</script>

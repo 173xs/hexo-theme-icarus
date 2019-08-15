@@ -72,9 +72,14 @@
                 </div>
             </div>
         </nav>
-        <div class="level">
-            <a class="level-item button is-link is-rounded" href="<%= url_for(widget.follow_link) %>" target="_blank">
-                <%= __('widget.follow') %></a>
+        <div id="knowledge-star">
+            <div class="level">
+                <a class="level-item button is-link is-rounded" href="<%= url_for(widget.follow_link) %>" target="_blank">
+                    <%= __('widget.follow') %></a>
+            </div>
+            <div clas="level" id="knowledge-qrcode" style="display:none;">
+                    <img src="<%= page.url %>/images/zhishixingqiu.png"/>
+            </div>
         </div>
         <% const socialLinks = get_config_from_obj(widget, 'social_links'); %>
         <% if (socialLinks !== null) { %>
