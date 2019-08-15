@@ -16,10 +16,10 @@
                 <div>
                     <% if (get_config_from_obj(widget, 'avatar_rounded')) { %>
                         <figure class="image is-128x128 has-mb-6">
-                            <img class="is-rounded" src="<%= avatar() %>" alt="<%= get_config_from_obj(widget, 'author') %>">
+                            <img id="blog-head-img" class="is-rounded" src="<%= avatar() %>" alt="<%= get_config_from_obj(widget, 'author') %>">
                         </figure>
                     <% } else { %>
-                        <img class="image is-128x128 has-mb-6" src="<%= avatar() %>" alt="<%= get_config_from_obj(widget, 'author') %>">
+                        <img id="blog-head-img" class="image is-128x128 has-mb-6" src="<%= avatar() %>" alt="<%= get_config_from_obj(widget, 'author') %>">
                     <% } %>
                     <% if (get_config_from_obj(widget, 'author')) { %>
                     <p class="is-size-5 is-block" style="margin-top: 10px;">

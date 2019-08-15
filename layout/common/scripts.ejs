@@ -12,8 +12,11 @@
 <script>
     $(function(){
         var showing = false;
+        var headEnter = false;
         var mouseArea =  $("#knowledge-star");
         var qrcode = $("#knowledge-qrcode");
+        var headimg = $("#blog-head-img");
+        //var originalSrc = headimg.attr("src");
 
         function knowStarAnim(show){
             if(show === showing) return;
@@ -28,6 +31,26 @@
 
         mouseArea.mouseleave(function(){
             knowStarAnim(false);
+        });
+
+        function headChangeAnim(enter){
+            if(enter === headEnter) return;
+            headEnter = enter;
+            var imgs = $("img");
+            if(enter){
+                $("img").attr("title", function() { return this.src });
+                $("img").attr({ src: "https://dp2px.com/images/jok-head.jpg" });
+            }else{
+                $("img").attr("src", function() { return this.title });
+                $("img").removeAttr("title");
+            }
+        }
+
+        headimg.mouseenter(function(){
+            headChangeAnim(true);
+        });
+        headimg.mouseleave(function(){
+            headChangeAnim(false);
         });
     });
 </script>
