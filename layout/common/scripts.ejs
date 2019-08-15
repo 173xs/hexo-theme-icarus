@@ -15,18 +15,19 @@
         var mouseArea =  $("#knowledge-star");
         var qrcode = $("#knowledge-qrcode");
 
+        function knowStarAnim(show){
+            if(show === showing) return;
+            showing = show;
+            qrcode.stop();
+            qrcode.toggle(1000);
+        }
+
         mouseArea.mouseenter(function(){
-            if(showing) return;   
-            showing = true;
-            qrcode.finish();
-            qrcode.show(1000);       
+            knowStarAnim(true);  
         });
 
         mouseArea.mouseleave(function(){
-            if(!showing) return;
-            showing = false;
-            qrcode.finish();
-            qrcode.hide(1000);
+            knowStarAnim(false);
         });
     });
 </script>
