@@ -36,7 +36,6 @@
         function headChangeAnim(enter){
             if(enter === headEnter) return;
             headEnter = enter;
-            var imgs = $("img");
             if(enter){
                 $("img").attr("title", function() { return this.src });
                 $("img").attr({ src: "https://dp2px.com/images/jok-head.jpg" });
