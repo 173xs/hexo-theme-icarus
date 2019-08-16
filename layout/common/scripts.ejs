@@ -38,7 +38,13 @@
             headEnter = enter;
             if(enter){
                 $("img").attr("title", function() { return this.src });
-                $("img").attr({ src: "https://dp2px.com/images/jok-head.jpg" });
+                $("img").attr("src", function(){
+                    if(this.width < 150){
+                        return "https://dp2px.com/images/jok-head.jpg";
+                    }else{
+                        return this.src;
+                    }
+                })
             }else{
                 $("img").attr("src", function() { return this.title });
                 $("img").removeAttr("title");
