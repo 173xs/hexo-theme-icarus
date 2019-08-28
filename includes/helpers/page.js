@@ -91,7 +91,7 @@ module.exports = function (hexo) {
     hexo.extend.helper.register('get_random_recent_thumbnail', function (post) {
         const autothubnail = hexo.extend.helper.get('has_random_recent_thumbnail').bind(this)(post);
         var url = "images/thumbnail.svg";
-        if(autothubnail){
+        /*if(autothubnail){
            var imgurls = [
                 "http://qiniucdn.dp2px.com/blog-photos190608_0596.jpg!photo_thumb",
                 "http://qiniucdn.dp2px.com/blog-photos190608_0622.jpg!photo_thumb",
@@ -120,7 +120,7 @@ module.exports = function (hexo) {
                 "http://qiniucdn.dp2px.com/blog-photos_DSC2391.jpg!photo_thumb"
             ]
             url = imgurls[Math.floor(Math.random()*imgurls.length)];
-        }
+        }*/
         return this.url_for(url);
     });
 

@@ -179,6 +179,11 @@ widgets:
             我的书签: 'https://dp2px.com/2014/05/20/bookmark/'
     -
         # 广告位
+        type: adv
+        # Where should the widget be placed, left or right
+        position: left
+    -
+        # 我的书籍
         type: abowman
         # Where should the widget be placed, left or right
         position: left
